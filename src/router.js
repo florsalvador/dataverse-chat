@@ -1,45 +1,30 @@
-let ROUTES = {};
-let rootEl;
+import data from './data/dataset.js';
 
-export const setRootEl = (el) => {
+let ROUTES = {}; 
+let rootEl; 
+
+export const setRootEl = (el) => { 
   rootEl = el;
-  // return rootEl;
 }
 
 export const setRoutes = (routes) => {
-  // assign ROUTES
   ROUTES = routes;
-  // optional Throw errors if routes isn't an object
-  // optional Throw errors if routes doesn't define an /error route
 }
 
-export const queryStringToObject = (queryString) => {
-  // convert query string to URLSearchParams
-  // convert URLSearchParams to an object
-  // return the object
+const queryStringToObject = (queryString) => {
 }
 
-export const renderView = (pathname, root) => {
-  // clear the root element
-  root.innerHTML = "";
-  // find the correct view in ROUTES for the pathname
-  // const view = ROUTES[pathname];
-  // in case not found render the error view
+const renderView = (pathname, props/* ={} */) => { 
 
-  // render the correct view passing the value of props
-
-  // add the view element to the DOM root element
-  root.appendChild(pathname);
-  // console.log(typeof root);
-}
+  rootEl.innerHTML = "";//Colocarlo en otro lugar //mejorar //OH Lunes o martes
+  rootEl.appendChild(pathname(props));
+} 
 
 export const navigateTo = (pathname, props={}) => {
-  // update window history with pushState
-  // render the view with the pathname and props
 }
 
 export const onURLChange = (location) => {
-  // parse the location for the pathname and search params
-  // convert the search params to an object
-  // render the view with the pathname and object
+  const pathname = location.pathname;
+  renderView(ROUTES[pathname], data);
+  //const params = new URLSearchParams(location.search);//queryString
 }
