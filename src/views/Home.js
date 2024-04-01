@@ -6,6 +6,7 @@
 
 import data from '../data/dataset.js';
 import { filterData, filterDataObj, sortData, sortDataPrice, computeStats } from '../lib/dataFunctions.js';
+import { navigateTo } from '../router.js';
 
 /////////////////////////////////view.js////////////////////////////////////
 function renderItems(gatos) {
@@ -98,10 +99,6 @@ export function Home(/*props*/) {
 
   //////////////////////////////////////// main.js (DATAVERSE) ///////////////////////////
   const root = divHome.querySelector("#rootHome");
-  //root.innerHTML =  `<h1>Hola</h1>`
-  console.log(root);
-  
-  //const root = document.querySelector("#rootHome");
   root.appendChild(renderItems(data));
 
   // menu responsive
@@ -177,8 +174,9 @@ export function Home(/*props*/) {
 
     for (let i = 0; i < data.length; i++) {
       botonesVer[i].addEventListener("click", function () {
-        sessionStorage.setItem("gatito", JSON.stringify(data[i]));
-        window.location.href = "gato.html";
+        navigateTo("/gatoInfo",data[i])
+        // sessionStorage.setItem("gatito", JSON.stringify(data[i]));
+        // window.location.pathname = "/gatoInfo";
       });
     }
   }
