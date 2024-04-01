@@ -4,7 +4,7 @@
 //   return el;
 // }
 
-import data from './data/dataset.js';
+import data from '../data/dataset.js';
 import { filterData, filterDataObj, sortData, sortDataPrice, computeStats } from '../lib/dataFunctions.js';
 
 function renderItems(data) {
@@ -35,13 +35,11 @@ export function Home() {
   <h1>Razas de gatos</h1>
   <h3>Las 24 razas de gatos más populares</h3>
 </header>
-
 <nav>
   <div class="div-menu-boton">
     <button class="menu-boton"> ☰ </button>
     <button class="cerrar-filtros"> ☰ </button>
   </div>
-
   <div class="menu-normal">
     <div class="div-select">
       <label for="pelajeGato">Filtrar por pelaje</label>
@@ -52,7 +50,6 @@ export function Home() {
         <option value="sin-pelo">Sin pelo</option>
       </select>
     </div>
-
     <div class="div-select">
       <label for="personalidad">Filtrar por personalidad</label>
       <select name="personalidad" id="personalidad">
@@ -63,7 +60,6 @@ export function Home() {
         <option value="jugueton">Juguetón</option>
       </select>
     </div>
-
     <div class="div-select">
       <label for="orden">Ordenar</label>
       <select id="orden" name="sort-order" data-testid="select-sort">
@@ -73,13 +69,11 @@ export function Home() {
         <option value="precio-desc">Precio (mayor-menor)</option>
       </select>
     </div>
-
     <span id="conteo">Resultados: 24</span>
     <button id="botonBorrar" class="botonMenu" data-testid="button-clear">Borrar filtros</button>
     <button id="stats" class="botonMenu">Estadísticas</button>
   </div>
 </nav>
-
 <main>
   <div class="contenedor-estadisticas">
     <button class="boton-cerrar-estadisticas"> X </button>
@@ -87,9 +81,8 @@ export function Home() {
   </div>
   <div id="rootHome"></div>
 </main>
-
 <footer>
-  <p>🐈‍⬛ 🐈‍⬛  Hecho por: Adriana y Flor 🐈‍⬛ 🐈‍⬛</p>
+  <p>🐈‍⬛ 🐈‍⬛ Hecho por: Adriana y Flor 🐈‍⬛ 🐈‍⬛</p>
 </footer>`;
 
   // const root = document.querySelector("#rootHome");

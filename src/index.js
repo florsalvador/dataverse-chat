@@ -13,11 +13,11 @@ const routes = {
 setRoutes(routes);
 
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(document.querySelector("#root"));//rootEl = el
+  setRootEl(document.querySelector("#root")); // rootEl = el
   onURLChange(window.location) 
   //renderView(routes['/'] , "Persa");
 });
 
-window.addEventListener('popstate', ({objetivo}) => {
-  onURLChange(window.location);
-});
+// window.addEventListener('popstate', ({objetivo}) => {
+//   onURLChange(window.location);
+// });

@@ -15,12 +15,12 @@ const queryStringToObject = (queryString) => {
 }
 
 const renderView = (pathname/*, props ={} */) => { 
-
   rootEl.innerHTML = "";//Colocarlo en otro lugar //mejorar //OH Lunes o martes
   rootEl.appendChild(pathname(/*props*/));
 } 
 
 export const navigateTo = (pathname, props={}) => {
+  linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
 }
 
 export const onURLChange = (location) => {
