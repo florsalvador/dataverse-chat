@@ -14,13 +14,16 @@ export const setRoutes = (routes) => {
 const queryStringToObject = (queryString) => {
 }
 
-const renderView = (pathname/*, props ={} */) => { 
+const renderView = (pathname, props ={}) => { 
   rootEl.innerHTML = "";//Colocarlo en otro lugar //mejorar //OH Lunes o martes
-  rootEl.appendChild(pathname(/*props*/));
+  rootEl.appendChild(pathname(props));
 } 
 
 export const navigateTo = (pathname, props={}) => {
-  linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
+  // push new history state with window.history.pushState
+  // render view passing it props
+  renderView(ROUTES[pathname], props);
+  // linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
 }
 
 export const onURLChange = (location) => {

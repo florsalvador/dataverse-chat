@@ -1,12 +1,12 @@
 import { Home } from './views/Home.js';
-import { Chat } from './views/Chat.js';
+import { GatoInfo } from './views/GatoInfo.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 const routes = { 
   '/': Home,
-  '/chat': Chat,
+  //'/chat': Chat,
   // '/chatGrupal': ChatGrupal,
-  // '/gatoInfo': GatoInfo,
+  '/gatoInfo': GatoInfo,
   // '/ErrorGatuno': ErrorGatuno,
 };
 
