@@ -17,8 +17,7 @@ function renderItems(gatos) {
     <p><span class="datos">✦ Tamaño:</span> <span itemprop="tamanoGato">${onlyCat.facts["tamanoGato"]}</span></p>
     <p><span class="datos">✦ Pelaje:</span> <span itemprop="pelajeGato">${onlyCat.facts["pelajeGato"]}</span></p>
     <p><span class="datos">✦ Esperanza de vida:</span> <span itemprop="esperanzaMax">${onlyCat.facts["esperanzaMax"]} años</span></p>
-    <p><span class="datos">✦ Precio:</span> <span itemprop="precioCachorro">${onlyCat.facts["precioCachorro"]} dólares</span></p>
-    <a href="/gatoInfo">Ver info</a>`
+    <p><span class="datos">✦ Precio:</span> <span itemprop="precioCachorro">${onlyCat.facts["precioCachorro"]} dólares</span></p>`
     nuevoUl.appendChild(nuevoLi); // inserta la etiqueta li en la etiqueta ul
   });
   return nuevoUl;
@@ -151,7 +150,7 @@ export function Home(/*props*/) {
     const botonesVer = divHome.querySelectorAll("li");//selecciona todos los elementos li
     for (let i = 0; i < data.length; i++) {
       botonesVer[i].addEventListener("click", function () {
-        navigateTo("/gatoInfo", {gatito: data[i], id: data[i].id});
+        navigateTo("/gatoInfo", {id: data[i].id});
         // sessionStorage.setItem("gatito", JSON.stringify(data[i]));
         // window.location.pathname = "/gatoInfo";
       });

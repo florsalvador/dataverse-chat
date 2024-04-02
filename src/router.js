@@ -11,9 +11,9 @@ export const setRoutes = (routes) => {
 
 const queryStringToObject = (queryString) => {
   // const params = new URLSearchParams("foo=1&bar=2");
-  const params = new URLSearchParams(queryString); // ("id=persa")
+  // const params = new URLSearchParams(queryString); // ("id=persa")
   const object = {};
-  for (const [key, value] of params) {
+  for (const [key, value] of queryString) {
     object[key] = value;
   }
   return object;
@@ -38,7 +38,7 @@ export const navigateTo = (pathname, props) => {
   // const url = new URL(location);
   // url.search = 
   // const url = new URL(pathname, window.location.origin);
-  // console.log(url.searchParams.set("foo", "bar"));
+  // url.searchParams.set("foo", "bar");
   // console.log(queryStringToObject("foo=1&bar=2"))
   // console.log(props.gatito);
   // console.log(queryStringToObject(window.location.search));
@@ -52,12 +52,7 @@ export const navigateTo = (pathname, props) => {
 
 export const onURLChange = (location) => {
   const pathname = location.pathname;
-  console.log(location);
-  const queryString = new URLSearchParams(location.search);
-  const gatoId = queryStringToObject(queryString); // objeto con id de los gatos {id: "persa"}
-  console.log(gatoId);
-  // parse the location for the pathname and search params 
-  // convert the search params to an object
-  // render the view with the pathname and object
-  renderView(pathname, gatoId);
+  const queryString = new URLSearchParams(location.search); // {"?id=persa&name=gato"}
+  const objProps = queryStringToObject(queryString); // objeto con id de los gatos {id: "persa"}
+  renderView(pathname, objProps);
 }
