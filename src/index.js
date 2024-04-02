@@ -1,4 +1,5 @@
 import { Home } from './views/Home.js';
+//import { Chat } from './views/Chat.js';
 import { GatoInfo } from './views/GatoInfo.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
@@ -18,6 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
   //renderView(routes['/'] , "Persa");
 });
 
-// window.addEventListener('popstate', ({objetivo}) => {
-//   onURLChange(window.location);
+// Handle URL changes
+// window.addEventListener("popstate", ({objetivo}) => {
+//   onURLChange(/* location */);
 // });
+
+window.addEventListener("popstate", () => {
+  // const location = window.location;
+  onURLChange(window.location);
+});
