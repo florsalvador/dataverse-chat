@@ -17,7 +17,11 @@ function renderItems(gatos) {
     <p><span class="datos">✦ Tamaño:</span> <span itemprop="tamanoGato">${onlyCat.facts["tamanoGato"]}</span></p>
     <p><span class="datos">✦ Pelaje:</span> <span itemprop="pelajeGato">${onlyCat.facts["pelajeGato"]}</span></p>
     <p><span class="datos">✦ Esperanza de vida:</span> <span itemprop="esperanzaMax">${onlyCat.facts["esperanzaMax"]} años</span></p>
-    <p><span class="datos">✦ Precio:</span> <span itemprop="precioCachorro">${onlyCat.facts["precioCachorro"]} dólares</span></p>`
+    <p><span class="datos">✦ Precio:</span> <span itemprop="precioCachorro">${onlyCat.facts["precioCachorro"]} dólares</span></p>
+    <div class="div-botones-tarjetas">
+      <button id="ver-info" class="boton-tarjeta">Más info</button>
+      <button id="chat-gato" class="boton-tarjeta">Chatear</button>
+    </div>`
     nuevoUl.appendChild(nuevoLi); // inserta la etiqueta li en la etiqueta ul
   });
   return nuevoUl;
@@ -147,17 +151,37 @@ export function Home(/*props*/) {
 
   //Funcionalidad de tarjeta ver mas----------------------------------------------------------
   function tarjetasVer(data) {
-    const botonesVer = divHome.querySelectorAll("li");//selecciona todos los elementos li
+    const botonesVer = divHome.querySelectorAll("#ver-info");//selecciona todos los elementos li
     for (let i = 0; i < data.length; i++) {
       botonesVer[i].addEventListener("click", function () {
         navigateTo("/gatoInfo", {id: data[i].id});
-        // sessionStorage.setItem("gatito", JSON.stringify(data[i]));
-        // window.location.pathname = "/gatoInfo";
+      });
+    }
+
+    const botonesChat = divHome.querySelectorAll("#chat-gato");
+    for (let i = 0; i < data.length; i++) {
+      botonesChat[i].addEventListener("click", function () {
+        navigateTo("/chatGato", {id: data[i].id});
       });
     }
   }
+
   tarjetasVer(data);
   //---------------------------------------------------------------------------------------------
+
+  // //Funcionalidad de tarjeta ver mas----------------------------------------------------------
+  // function tarjetasVer(data) {
+  //   const botonesVer = divHome.querySelectorAll("#ver-info");//selecciona todos los elementos li
+  //   for (let i = 0; i < data.length; i++) {
+  //     botonesVer[i].addEventListener("click", function () {
+  //       navigateTo("/gatoInfo", {id: data[i].id});
+  //       // sessionStorage.setItem("gatito", JSON.stringify(data[i]));
+  //       // window.location.pathname = "/gatoInfo";
+  //     });
+  //   }
+  // }
+  // tarjetasVer(data);
+  // //---------------------------------------------------------------------------------------------
 
   // EVENTOS SELECT
   const selectPelaje = divHome.querySelector("#pelajeGato");
