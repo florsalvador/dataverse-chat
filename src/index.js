@@ -16,15 +16,8 @@ setRoutes(routes);
 window.addEventListener("DOMContentLoaded", () => {
   setRootEl(document.querySelector("#root")); // rootEl = el
   onURLChange(window.location) 
-  //renderView(routes['/'] , "Persa");
 });
 
-// Handle URL changes
-// window.addEventListener("popstate", ({objetivo}) => {
-//   onURLChange(/* location */);
-// });
-
 window.addEventListener("popstate", () => {
-  // const location = window.location;
   onURLChange(window.location);
 });
