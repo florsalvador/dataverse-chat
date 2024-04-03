@@ -35,24 +35,17 @@ const renderView = (pathname, props ={}) => {
 } 
 
 export const navigateTo = (pathname, props) => {
+  // url que no funciona completamente
   // const url = new URL(location);
-  // url.search = 
-  // const url = new URL(pathname, window.location.origin);
-  // url.searchParams.set("foo", "bar");
-  // console.log(queryStringToObject("foo=1&bar=2"))
-  // console.log(props.gatito);
-  // console.log(queryStringToObject(window.location.search));
+  // url.searchParams.set("id", props.id);
   const url = pathname + "?id=" + props.id;
   window.history.pushState({}, "", url);
   renderView(pathname, props);
-
-  // update window history with pushState
-  // render the view with the pathname and props
 }
 
 export const onURLChange = (location) => {
   const pathname = location.pathname;
-  const queryString = new URLSearchParams(location.search); // {"?id=persa&name=gato"}
-  const objProps = queryStringToObject(queryString); // objeto con id de los gatos {id: "persa"}
+  const queryString = new URLSearchParams(location.search); // convierte "?id=persa" a { id → "persa" }
+  const objProps = queryStringToObject(queryString); // convierte { id → "persa" } a { id: "persa" }
   renderView(pathname, objProps);
 }
