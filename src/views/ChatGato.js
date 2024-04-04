@@ -7,7 +7,7 @@ export function ChatGato(props) {
   </header>
   <main>
    <div></div>
-   <button id="div-apikey">🗝️</button>
+   
   </main>`
 
   return divChatGato;
