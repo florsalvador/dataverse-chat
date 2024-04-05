@@ -8,10 +8,11 @@ export const communicateWithOpenAI = (messages) => {
   
   //const axios = require('axios');//?????
 
-  axios.post(url, {
+  return axios.post(url, {
     messages,
     max_tokens: 150,
-    temperature: 0.7
+    temperature: 1.2,
+    model: "gpt-3.5-turbo"
   }, {
     headers: {
       'Authorization': `Bearer ${apiKey}`,

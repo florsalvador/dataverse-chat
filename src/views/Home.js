@@ -169,20 +169,6 @@ export function Home(/*props*/) {
   tarjetasVer(data);
   //---------------------------------------------------------------------------------------------
 
-  // //Funcionalidad de tarjeta ver mas----------------------------------------------------------
-  // function tarjetasVer(data) {
-  //   const botonesVer = divHome.querySelectorAll("#ver-info");//selecciona todos los elementos li
-  //   for (let i = 0; i < data.length; i++) {
-  //     botonesVer[i].addEventListener("click", function () {
-  //       navigateTo("/gatoInfo", {id: data[i].id});
-  //       // sessionStorage.setItem("gatito", JSON.stringify(data[i]));
-  //       // window.location.pathname = "/gatoInfo";
-  //     });
-  //   }
-  // }
-  // tarjetasVer(data);
-  // //---------------------------------------------------------------------------------------------
-
   // EVENTOS SELECT
   const selectPelaje = divHome.querySelector("#pelajeGato");
   const selectPersonalidad = divHome.querySelector("#personalidad");
@@ -191,7 +177,8 @@ export function Home(/*props*/) {
   const conteo = divHome.querySelector("#conteo"); //contador
 
   // evento para select pelaje
-  selectPelaje.addEventListener("change", function (evento) { // event: la informacion del evento, cuando haces un cambio viaja la informacion de que seleccionas o que has seleccionado previamente
+  selectPelaje.addEventListener("change", function (evento) {
+    // event: la informacion del evento, cuando haces un cambio viaja la informacion de que seleccionas o que has seleccionado previamente
     //insertar las funciones
     const gatosFiltradosPelaje = filtrarPelaje(data, evento.target.value);
     const gatosFiltradosPelajePersonalidad = filtrarPersonalidad(gatosFiltradosPelaje, selectPersonalidad.value);
