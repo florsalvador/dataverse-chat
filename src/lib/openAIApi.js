@@ -19,7 +19,7 @@ export const communicateWithOpenAI = (messages) => {
     }
   })
     .then(response => {
-      response.data.choices[0].message.content;
+      return response.data.choices[0].message.content;
     })
     .catch(error => {
       console.error('Error:', error);
