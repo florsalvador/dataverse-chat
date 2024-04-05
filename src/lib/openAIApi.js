@@ -6,7 +6,7 @@ export const communicateWithOpenAI = (messages) => {
   const apiKey = getApiKey();
   const url = 'https://api.openai.com/v1/chat/completions';
   
-  const axios = require('axios');//?????
+  //const axios = require('axios');//?????
 
   axios.post(url, {
     messages,
