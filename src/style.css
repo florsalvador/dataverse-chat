@@ -123,7 +123,7 @@ h1 {
     scale: 1.01;
   }
   
-  #root {
+  #rootHome {
     background-color: #eae2f4;
     padding: 10px 40px 5px 40px;
   }
@@ -298,21 +298,23 @@ display: none;
 }
 
 /* Estilos de las paginas de chat */
+.contenedor-principal {
+  /* margin: 0 200px; */
+  background-color: #eae2f4;
+}
 
 /* contiene la imagen y el chat */
-.contenedor {
+.contenedor-foto-chat {
   display: flex;
-  justify-content: space-around;
-  margin-left: 200px;
-  margin-right: 200px;
+  justify-content: center;
   margin-top: 30px;
-  /* flex-direction: ; */
 }
 
 .imagen {
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  margin-right: 50px;
 }
 
 .contenedor-chat {
@@ -320,9 +322,9 @@ display: none;
   flex-direction: column;
   background-color: #FFF8F0;
   border-radius: 30px;
-  width: 60%;
+  width: 500px;
   height: 550px;
-  align-content: flex-end;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .mensaje-gato {
@@ -330,6 +332,7 @@ display: none;
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
+  margin-right: 30%;
 }
 
 .mensaje-usuaria {
@@ -337,8 +340,67 @@ display: none;
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
+  margin-left: 30%;
 }
 
-/* .contenedor-input {
+#mensajes {
+  height: 90%;
+  overflow-y: scroll;
+  color: #353837;
+}
+
+.negrita-mensajes {
+  font-weight: bold;
+  font-size: small;
+  margin: 0;
+  margin-bottom: 4px;
+  color: #595F5D;
+}
+
+.contenedor-input {
   display: flex;
-} */
+  background-color: white;
+  margin: 10px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+textarea {
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+  width: 85%;
+  resize: none;
+  font-family: "Inter", sans-serif;
+  color: #353837;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.boton-chat {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: #B9929F;
+}
+
+#boton-apikey {
+  float: inline-end;
+  cursor: pointer;
+  font-size: 50px;
+  padding: 15px;
+  background-color: #B9929F;
+  margin: 20px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#popup-apikey {
+  width: 400px;
+  float: inline-end;
+  background-color: #eae2f4;
+}

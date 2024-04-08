@@ -8,19 +8,19 @@ export function ChatGato(props) {
     if (props.id === data[i].id) {
       const gatito = data[i];
       divChatGato.innerHTML = `
-      <main>
+      <div class="contenedor-principal">
       <h1>Chatea con el gatito ${gatito.id}</h1>
-      <div class="contenedor">
+      <div class="contenedor-foto-chat">
         <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
         <div class="contenedor-chat">
           <div id="mensajes"></div>
           <div class="contenedor-input">
-            <input type="text" id="usuaria-input" placeholder="Escribe tu mensaje...">
-            <button id="boton-enviar-input" class="boton-chat">Enviar</button>
+            <textarea id="usuaria-input" placeholder="Escribe tu mensaje..." rows="3"></textarea>
+            <button id="boton-enviar-input" class="boton-chat">▶</button>
           </div>
         </div>
       </div>
-      </main>`
+      </div>`
 
       const mensajes = divChatGato.querySelector("#mensajes");
       const inputUsuaria = divChatGato.querySelector("#usuaria-input");
@@ -30,7 +30,7 @@ export function ChatGato(props) {
         const prompt = [
           {
             "role": "system",
-            "content": "Como el rol de gatito" + gatito.id + "responde a la siguiente pregunta"
+            "content": "Toma el rol de un gatito de raza " + gatito.id + " y responde a la siguiente pregunta"
           },
           {
             "role": "user",
@@ -43,12 +43,12 @@ export function ChatGato(props) {
         parrafoGato.classList.add("mensaje-gato");
         parrafoUsuaria.classList.add("mensaje-usuaria");
 
-        parrafoUsuaria.innerHTML = `<span class="negrita-mensajes">Tú:</span> ${inputUsuaria.value}`;
+        parrafoUsuaria.innerHTML = `<p class="negrita-mensajes">Tú 👩🏻</p> ${inputUsuaria.value}`;
         parrafoGato.innerHTML = "Escribiendo...";
 
         communicateWithOpenAI(prompt)
           .then(response => {
-            parrafoGato.innerHTML = `<span class="negrita-mensajes">Gatito ${gatito.id}:</span> ${response}`;
+            parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> ${response}`;
             // mensajeGato.innerHTML = response;
             // console.log("Respuesta de OpenAI:", response);
           })
