@@ -10,8 +10,6 @@ export const setRoutes = (routes) => {
 }
 
 const queryStringToObject = (queryString) => {
-  // const params = new URLSearchParams("foo=1&bar=2");
-  // const params = new URLSearchParams(queryString); // ("id=persa")
   const object = {};
   for (const [key, value] of queryString) {
     object[key] = value;

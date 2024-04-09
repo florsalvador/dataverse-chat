@@ -298,16 +298,21 @@ display: none;
 }
 
 /* Estilos de las paginas de chat */
-.contenedor-principal {
-  /* margin: 0 200px; */
+
+/* .contenedor-principal {
   background-color: #eae2f4;
-}
+} */
 
 /* contiene la imagen y el chat */
 .contenedor-foto-chat {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  /* margin: 0 auto;
+  width: 1000px;
+  padding: 30px;
+  border-radius: 30px;
+  background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .imagen {
@@ -347,6 +352,7 @@ display: none;
   height: 90%;
   overflow-y: scroll;
   color: #353837;
+  margin: 10px;
 }
 
 .negrita-mensajes {
