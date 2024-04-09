@@ -33,9 +33,9 @@ const renderView = (pathname, props ={}) => {
 } 
 
 export const navigateTo = (pathname, props) => {
-  // url que no funciona completamente
-  // const url = new URL(location);
-  // url.searchParams.set("id", props.id);
+  //url que no funciona completamente
+  //const url = new URL(location);
+  //url.searchParams.set("id", props.id);
   const url = pathname + "?id=" + props.id;
   window.history.pushState({}, "", url);
   renderView(pathname, props);

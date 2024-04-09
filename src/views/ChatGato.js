@@ -4,22 +4,22 @@ import { communicateWithOpenAI } from '../lib/openAIApi.js';
 export function ChatGato(props) {
 
   const divChatGato = document.createElement("div");
+  divChatGato.classList.add("div-Chat");
+
   for (let i = 0; i < data.length; i++) {
     if (props.id === data[i].id) {
       const gatito = data[i];
-      divChatGato.innerHTML = `
-      <div class="contenedor-principal">
-      <h1>Chatea con el gatito ${gatito.id}</h1>
+      divChatGato.innerHTML = ` 
+      <h1 class="titulo-chat">Chatea con el gatito ${gatito.id}</h1>
       <div class="contenedor-foto-chat">
         <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
         <div class="contenedor-chat">
           <div id="mensajes"></div>
           <div class="contenedor-input">
-            <textarea id="usuaria-input" placeholder="Escribe tu mensaje..." rows="3"></textarea>
-            <button id="boton-enviar-input" class="boton-chat">▶</button>
+              <textarea id="usuaria-input" placeholder="Escribe tu mensaje..." rows="3"></textarea>
+              <button id="boton-enviar-input" class="boton-chat">▶</button>
           </div>
         </div>
-      </div>
       </div>`
 
       const mensajes = divChatGato.querySelector("#mensajes");
