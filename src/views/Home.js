@@ -71,8 +71,9 @@ export function Home(/*props*/) {
       <span id="conteo">Resultados: 24</span>
       <button id="botonBorrar" class="botonMenu" data-testid="button-clear">Borrar filtros</button>
       <button id="stats" class="botonMenu">Estadísticas</button>
+      <button id="chat-grupal" class="botonMenu">Chat Grupal</button>
     </div>
-    <button id="chat-grupal" class="boton-tarjeta">Chat Grupal</button>
+    
   </nav>
   <main>
     <div class="contenedor-estadisticas">
