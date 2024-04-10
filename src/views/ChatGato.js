@@ -12,7 +12,10 @@ export function ChatGato(props) {
       divChatGato.innerHTML = ` 
       <h1 class="titulo-chat">Chatea con el gatito ${gatito.id}</h1>
       <div class="contenedor-foto-chat">
-        <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
+        <div class="div-image-chat">
+          <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
+          <p>¿Sabías que mi lugar de origen es Irán?</p>
+        </div>
         <div class="contenedor-chat">
           <div id="mensajes"></div>
           <div class="contenedor-input">
