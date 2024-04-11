@@ -29,6 +29,13 @@ export function ChatGato(props) {
       const inputUsuaria = divChatGato.querySelector("#usuaria-input");
       const botonEnviarInput = divChatGato.querySelector("#boton-enviar-input");
 
+      // primer mensaje del gato
+      const primerParrafoGato = document.createElement("div");
+      primerParrafoGato.classList.add("mensaje-gato");
+      primerParrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p>¡Pregúntame lo que quieras!`
+      mensajes.appendChild(primerParrafoGato);
+
+      // evento cuando la usuaria envia un mensaje
       botonEnviarInput.addEventListener("click", function () {
         const prompt = [
           {
@@ -56,7 +63,7 @@ export function ChatGato(props) {
             // console.log("Respuesta de OpenAI:", response);
           })
           .catch(error => {
-            // return error;
+            // parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau!`;
             console.error("Error al comunicarse con OpenAI:", error);
           });
 

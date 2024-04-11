@@ -154,12 +154,6 @@ h1 {
     padding: 30px;
     height: 530px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    cursor: pointer;
-    transition: all .3s;
-  }
-  
-  .tarjeta:hover {
-    scale: 1.05;
   }
   
   .tarjeta img {
@@ -397,7 +391,6 @@ textarea:focus {
 }
 
 #boton-apikey {
-  float: inline-end;
   cursor: pointer;
   font-size: 50px;
   padding: 15px;
@@ -410,8 +403,9 @@ textarea:focus {
 
 #popup-apikey {
   width: 400px;
-  float: inline-end;
-  background-color: #eae2f4;
+  background-color: none;
+  position: fixed;
+  top: 75% ; left: 80%;
 }
 
 #imagenes-chat {
@@ -443,4 +437,33 @@ textarea:focus {
   color: #4d5351;
   width: 240px;
   text-align: center;
+}
+
+#contenedor-boton-apikey{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 80% ; left: 90%;
+}
+
+.div-botones-tarjetas{
+  display: flex;
+  justify-content: center;
+}
+
+.boton-tarjeta{
+  border: none;
+  border-radius: 5px;
+  background: #B9929F;
+  color: #FFF8F0;
+  padding: 7px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.boton-tarjeta:hover {
+  background-color: #895866;
+  scale: 1.05;
 }

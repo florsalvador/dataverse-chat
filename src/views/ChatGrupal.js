@@ -19,16 +19,14 @@ export function ChatGrupal(/*props*/) {
     </div>`
 
   const imagenesChat = divChatGrupal.querySelector("#imagenes-chat");
+
   data.forEach(gatito => {
     imagenesChat.innerHTML += `<img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}"></img>` 
-
-
 
     const mensajes = divChatGrupal.querySelector("#mensajes");
     const inputUsuaria = divChatGrupal.querySelector("#usuaria-input");
     const botonEnviarInput = divChatGrupal.querySelector("#boton-enviar-input");
   
-
     botonEnviarInput.addEventListener("click", function () {
       const prompt = [
         {
