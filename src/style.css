@@ -152,7 +152,7 @@ h1 {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 30px;
-    height: 530px;
+    height: 550px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
@@ -300,7 +300,7 @@ display: none;
 /* contiene la imagen y el chat */
 .contenedor-foto-chat {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0 auto;
   width: 900px;
   padding: 30px;
@@ -314,8 +314,7 @@ display: none;
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  margin-right: 50px;
-  margin-bottom: 15px;
+  margin: 0 auto;
 }
 
 .contenedor-chat {
@@ -325,7 +324,7 @@ display: none;
   border-radius: 30px;
   width: 500px;
   height: 550px;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .mensaje-gato {
@@ -415,6 +414,7 @@ textarea:focus {
   height: 550px;
   scrollbar-color: #B9929F #eae2f4 ;
   margin-right: 50px;
+  padding-right: 30px;
 }
 
 .div-Chat{
@@ -423,15 +423,7 @@ textarea:focus {
   padding-bottom: 100px;
 }
 
-.titulo-chat{
-  padding: 15px;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: white;
-}
-
 #contenedor-boton-apikey{
-  display: flex;
-  flex-direction: row;
   position: fixed;
   top: 80% ; left: 90%;
 }
@@ -451,9 +443,33 @@ textarea:focus {
   cursor: pointer;
   font-size: 16px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all .2s;
 }
+
 .boton-tarjeta:hover {
   background-color: #895866;
   scale: 1.05;
+}
+
+.titulo-chat {
+  font-family: "Inter", sans-serif;
+  font-size: 44px;
+  padding: 25px;
+  /* -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white; */
+}
+
+.div-image-chat {
+  display: flex;
+  flex-direction: column;
+  color: #4d5351;
+  width: 240px;
+  text-align: center;
+}
+
+.imagen-chat-grupal{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
 }

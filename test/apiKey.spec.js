@@ -25,7 +25,6 @@ describe('fakeSetApiKey', () => {
 
 describe('fakeGetApiKey', () => {
   it('debería devolver el valor de la API Key', () => {
-    // Desarrolla el test correspondiente aquí
     expect(fakeGetApiKey()).toEqual(fakeAPIKey);
   });
 });
