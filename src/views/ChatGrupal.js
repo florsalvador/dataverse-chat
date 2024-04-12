@@ -74,7 +74,7 @@ export function ChatGrupal(/*props*/) {
           responses.forEach(response => {
             const parrafoGato = document.createElement("div");
             parrafoGato.classList.add("mensaje-gato");
-            parrafoGato.innerHTML = `<p class="negrita-mensajes">${response.idParrafo/* .replace(/-/g, " ") */}</p> ${response.respuestaParrafo}`;
+            parrafoGato.innerHTML = `<p class="negrita-mensajes">${response.idParrafo}</p> ${response.respuestaParrafo}`;
             mensajes.appendChild(parrafoGato);
           });
         });
