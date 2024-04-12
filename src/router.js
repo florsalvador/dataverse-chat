@@ -38,6 +38,7 @@ export const navigateTo = (pathname, props) => {
   //url.searchParams.set("id", props.id);
   //const url = pathname + "?id=" + props.id;
   window.history.pushState({}, pathname, `${window.location.origin + pathname}${props ? "?id=" + props.id : ""}`);
+  // window.scrollTo(0, 0); // Reinicia el scroll al inicio de la página
   renderView(pathname, props);
 }
 

@@ -15,9 +15,13 @@ const routes = {
 
 setRoutes(routes);
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   setRootEl(document.querySelector("#root")); // rootEl = el
-  onURLChange(window.location) 
+  onURLChange(window.location)
 });
 
 window.addEventListener("popstate", () => {
