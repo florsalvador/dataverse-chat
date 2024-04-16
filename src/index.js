@@ -25,10 +25,10 @@ window.addEventListener("popstate", () => {
   onURLChange(window.location);
 });
 
-const botonAPIKey = document.querySelector("#boton-apikey");
-const popupAPIKey = document.querySelector("#popup-apikey");
-const botonGuardarAPIKey = document.querySelector("#boton-guardar-apikey");
-const inputAPIKey = document.querySelector("#input-apikey");
+const botonAPIKey = document.querySelector("#boton-apikey"); // boton que abre el form
+const popupAPIKey = document.querySelector("#popup-apikey"); // div escondido que contiene el form
+const botonGuardarAPIKey = document.querySelector("#boton-guardar-apikey"); // boton que guarda el apikey
+const inputAPIKey = document.querySelector("#input-apikey"); // campo de texto donde se ingresa el apikey
 
 botonAPIKey.addEventListener("click", function () {
   popupAPIKey.style.display = "block";

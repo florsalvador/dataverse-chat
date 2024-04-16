@@ -1,5 +1,6 @@
 import data from '../data/dataset.js';
 import { communicateWithOpenAI } from '../lib/openAIApi.js';
+import { navigateTo } from '../router.js';
 
 export function ChatGato(props) {
 
@@ -10,11 +11,11 @@ export function ChatGato(props) {
     if (props.id === data[i].id) {
       const gatito = data[i];
       divChatGato.innerHTML = ` 
-      <h1 class="titulo-chat">Chatea con el Gatito ${gatito.name}</h1>
       <div class="contenedor-foto-chat">
         <div class="div-image-chat">
+          <button id="volver-home" class="boton-chat">Volver</button>
           <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
-          <p>💡 ¿Sabías que mi lugar de origen es ${gatito.facts.lugarDeOrigen}?</p>
+          <h1 class="titulo-chat">Gatito ${gatito.name}</h1>
         </div>
         <div class="contenedor-chat">
           <div id="mensajes"></div>
@@ -24,6 +25,11 @@ export function ChatGato(props) {
           </div>
         </div>
       </div>`
+
+      const volverHome = divChatGato.querySelector("#volver-home");
+      volverHome.addEventListener("click", function () {
+        navigateTo("/");
+      })
 
       const mensajes = divChatGato.querySelector("#mensajes");
       const inputUsuaria = divChatGato.querySelector("#usuaria-input");

@@ -24,22 +24,27 @@ const queryStringToObject = (queryString) => {
 const renderView = (pathname, props ={}) => { 
   rootEl.innerHTML = "";//Colocarlo en otro lugar //mejorar //OH Lunes o martes
   //rootEl.appendChild(ROUTES[pathname](props));
-
-  if(!ROUTES[pathname]){
+  let keyId = 0;
+  //let valueId = 0; 
+  for (const key in props) {
+    keyId = key;
+    //valueId = props[key];
+  }
+  
+  //const idGatos =["persa", "siames", "maine-coon"]
+  //console.log(window.location.search, keyId, valueId, props)
+  //for(let i = 0; i < idGatos.length; i++){
+  if(!ROUTES[pathname] || (keyId ? keyId !== "id" : false) /*|| (valueId ? valueId !== idGatos[i] : false)*/){
     //rootEl.appendChild(ROUTES["/errorGatuno"]);
     // Si no existe, redirigir a la ruta de error
     window.history.pushState({}, "/errorGatuno", `${window.location.origin}/errorGatuno`);
     // Actualizar pathname
     pathname = "/errorGatuno";
   } 
-  
+  //}
+ 
   rootEl.appendChild(ROUTES[pathname](props));
-  // clear the root element
-  // find the correct view in ROUTES for the pathname
-  // in case not found render the error view
-  // render the correct view passing the value of props
-  // add the view element to the DOM root element
-} 
+}
 
 export const navigateTo = (pathname, props) => {
   //url que no funciona completamente
