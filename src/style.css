@@ -65,8 +65,8 @@ select {
 }
 
 .botonMenu:hover {
-  background-color: #895866;
-  border: 1px solid #895866;
+    background-color: #895866;
+    border: 1px solid #895866;
 }
 
 .div-menu-boton {
@@ -93,7 +93,7 @@ select {
   margin: 0 auto;
 }
 
-.contenedor-estadisticas {
+.contenedor-estadisticas{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -102,14 +102,14 @@ select {
   color: #595F5D;
 }
 
-.div-stadisticas {
+.div-stadisticas{
   display: none;
   background-color: #eae2f4;
   padding: 20px;
   text-align: center;
-}
+ }
 
-.boton-cerrar-estadisticas {
+.boton-cerrar-estadisticas{
   display: none;
   background-color: #eae2f4;
   border: none;
@@ -118,7 +118,7 @@ select {
   color: #595F5D;
 }
 
-.boton-cerrar-estadisticas:hover {
+.boton-cerrar-estadisticas:hover{
   color: #3a3e3d;
   scale: 1.01;
 }
@@ -200,196 +200,6 @@ footer p {
   margin: 0;
 }
 
-
-/* ///////////////////////////////////// index.html ////////////////////////////////////////////////// */
-
-#popup-apikey {
-  display: none;
-}
-
-/* Estilos de las paginas de chat */
-
-/* contiene la imagen y el chat */
-.contenedor-foto-chat {
-  /* display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  width: 900px; */
-  /* width: ; */
-  padding: 30px;
-  border-radius: 30px;
-  background: linear-gradient(44.8deg, rgba(148, 113, 145, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
-  background-color: #eae2f4;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.imagen {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.contenedor-chat {
-  display: flex;
-  flex-direction: column;
-  background-color: #FFF8F0;
-  border-radius: 30px;
-  /* width: 500px;
-  height: 550px; */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.mensaje-gato {
-  background-color: #eae2f4;
-  border-radius: 20px;
-  margin: 20px;
-  padding: 20px;
-  margin-right: 30%;
-}
-
-.mensaje-usuaria {
-  background-color: #FFF0C1;
-  border-radius: 20px;
-  margin: 20px;
-  padding: 20px;
-  margin-left: 30%;
-}
-
-#mensajes {
-  height: 90%;
-  overflow-y: scroll;
-  color: #353837;
-  margin: 10px;
-  scrollbar-color: #B9929F #FFF8F0;
-}
-
-.negrita-mensajes {
-  font-weight: bold;
-  font-size: small;
-  margin: 0;
-  margin-bottom: 4px;
-  color: #595F5D;
-}
-
-.contenedor-input {
-  display: flex;
-  background-color: white;
-  margin: 10px;
-  border-radius: 20px;
-  align-items: center;
-}
-
-textarea {
-  border: none;
-  border-radius: 20px;
-  padding: 15px;
-  width: 85%;
-  resize: none;
-  font-family: "Inter", sans-serif;
-  color: #353837;
-}
-
-textarea:focus {
-  outline: none;
-}
-
-.boton-chat {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 30px;
-  color: #B9929F;
-}
-
-#boton-apikey {
-  cursor: pointer;
-  font-size: 50px;
-  padding: 15px;
-  background-color: #B9929F;
-  margin: 20px;
-  border: none;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-#popup-apikey {
-  width: 400px;
-  background-color: none;
-  position: fixed;
-  top: 75%;
-  left: 80%;
-}
-
-#imagenes-chat {
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 550px;
-  scrollbar-color: #B9929F transparent;
-  margin-right: 50px;
-  padding-right: 30px;
-}
-
-.div-Chat {
-  background: no-repeat url(images/gatos-campo-2.jpg);
-  background-size: 100%;
-  padding-bottom: 100px;
-}
-
-#contenedor-boton-apikey {
-  position: fixed;
-  top: 80%;
-  left: 90%;
-}
-
-.div-botones-tarjetas {
-  display: flex;
-  justify-content: center;
-  /* margin-top: 20px; */
-}
-
-.boton-tarjeta {
-  border: none;
-  border-radius: 5px;
-  background: #B9929F;
-  color: #FFF8F0;
-  padding: 7px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all .2s;
-}
-
-.boton-tarjeta:hover {
-  background-color: #895866;
-  scale: 1.05;
-}
-
-.titulo-chat {
-  font-family: "Inter", sans-serif;
-  font-size: 44px;
-  padding: 25px;
-  /* -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: white; */
-}
-
-.div-image-chat {
-  display: flex;
-  /* flex-direction: column; */
-  color: #4d5351;
-  width: 240px;
-  text-align: center;
-}
-
-.imagen-chat-grupal {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 15px;
-}
-
 @media only screen and (max-width: 500px) {
   header {
     background: none;
@@ -420,7 +230,203 @@ textarea:focus {
   }
 }
 
-@media only screen and (max-width: 850px) {
+/* ///////////////////////////////////// index.html ////////////////////////////////////////////////// */
+
+#popup-apikey{
+display: none;
+}
+
+/* Estilos de las paginas de chat */
+
+/* .contenedor-principal {
+background-color: #eae2f4;
+} */
+
+/* contiene la imagen y el chat */
+.contenedor-foto-chat {
+display: flex;
+flex-direction: column;
+/* justify-content: space-evenly; */
+margin: 0 auto;
+width: 900px;
+padding: 30px;
+border-radius: 30px;
+background: linear-gradient(44.8deg, rgba(148, 113, 145, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
+background-color: #eae2f4;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.imagen {
+border-radius: 50%;
+width: 120px;
+height: 120px;
+margin-left: 30px;
+/* margin: 0 auto; */
+}
+
+.contenedor-chat {
+display: flex;
+flex-direction: column;
+background-color: #FFF8F0;
+border-radius: 30px;
+/* width: 500px; */
+height: 550px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.mensaje-gato {
+background-color: #eae2f4;
+border-radius: 20px;
+margin: 20px;
+padding: 20px;
+margin-right: 30%;
+}
+
+.mensaje-usuaria {
+background-color: #FFF0C1;
+border-radius: 20px;
+margin: 20px;
+padding: 20px;
+margin-left: 30%;
+}
+
+#mensajes {
+height: 90%;
+overflow-y: scroll;
+color: #353837;
+margin: 10px;
+scrollbar-color: #B9929F #FFF8F0;
+}
+
+.negrita-mensajes {
+font-weight: bold;
+font-size: small;
+margin: 0;
+margin-bottom: 4px;
+color: #595F5D;
+}
+
+.contenedor-input {
+display: flex;
+background-color: white;
+margin: 10px;
+border-radius: 20px;
+align-items: center;
+}
+
+textarea {
+border: none;
+border-radius: 20px;
+padding: 15px;
+width: 85%;
+resize: none;
+font-family: "Inter", sans-serif;
+color: #353837;
+}
+
+textarea:focus {
+outline: none;
+}
+
+.boton-chat {
+border: none;
+background: none;
+cursor: pointer;
+font-size: 30px;
+color: #B9929F;
+}
+
+#boton-apikey {
+cursor: pointer;
+font-size: 50px;
+padding: 15px;
+background-color: #B9929F;
+margin: 20px;
+border: none;
+border-radius: 15px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#popup-apikey {
+width: 400px;
+background-color: none;
+position: fixed;
+top: 75% ; left: 80%;
+}
+
+#imagenes-chat {
+display: flex;
+flex-direction: column;
+overflow-y: scroll;
+height: 550px;
+scrollbar-color: #B9929F #eae2f4;
+/* scrollbar-color: #B9929F transparent; */
+margin-right: 50px;
+padding-right: 30px;
+}
+
+.div-Chat {
+background: no-repeat url(images/gatos-campo-2.jpg);
+background-size: 100%;
+padding-bottom: 20px;
+padding-top: 20px;
+}
+
+#contenedor-boton-apikey{
+position: fixed;
+top: 80% ; left: 90%;
+}
+
+.div-botones-tarjetas{
+display: flex;
+justify-content: center;
+/* margin-top: 20px; */
+}
+
+.boton-tarjeta{
+border: none;
+border-radius: 5px;
+background: #B9929F;
+color: #FFF8F0;
+padding: 7px;
+margin: 10px;
+cursor: pointer;
+font-size: 16px;
+cursor: pointer;
+transition: all .2s;
+}
+
+.boton-tarjeta:hover {
+background-color: #895866;
+scale: 1.05;
+}
+
+.titulo-chat {
+font-family: "Inter", sans-serif;
+font-size: 44px;
+padding: 25px;
+/* -webkit-text-stroke-width: 0.5px;
+-webkit-text-stroke-color: white; */
+}
+
+.div-image-chat {
+display: flex;
+/* justify-content: flex-start; */
+/* flex-direction: column; */
+color: #4d5351;
+margin-bottom: 20px;
+/* width: 240px; */
+/* text-align: center; */
+}
+
+.imagen-chat-grupal{
+border-radius: 50%;
+width: 200px;
+height: 200px;
+margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1000px) {
   header {
     background: none;
   }
@@ -467,30 +473,8 @@ textarea:focus {
   #conteo{
     margin-top: 5px;
   }
-  .contenedor-foto-chat {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 160px 1fr;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    height: 100vh;
-  }
-  .imagen {
-    width: 150px;
-    height: 150px;
-  }
-  .div-Chat {
-    background: none;
-    padding-bottom: 0;
-  }
   .contenedor-chat {
-    box-shadow: none;
     border-radius: 0;
-  }
-  #contenedor-boton-apikey {
-    top: 10%;
   }
 }
 

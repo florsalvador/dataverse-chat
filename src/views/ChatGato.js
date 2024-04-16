@@ -13,7 +13,7 @@ export function ChatGato(props) {
       divChatGato.innerHTML = ` 
       <div class="contenedor-foto-chat">
         <div class="div-image-chat">
-          <button id="volver-home" class="boton-chat">Volver</button>
+          <button id="volver-home" class="boton-chat">◀︎</button>
           <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
           <h1 class="titulo-chat">Gatito ${gatito.name}</h1>
         </div>
