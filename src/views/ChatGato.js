@@ -16,6 +16,7 @@ export function ChatGato(props) {
           <button id="volver-home" class="boton-chat">◀︎</button>
           <img class="imagen" src="${gatito.imageUrl}" alt="${gatito.id}">
           <h1 class="titulo-chat">Gatito ${gatito.name}</h1>
+          <div class="div-vacio-apikey"></div>
         </div>
         <div class="contenedor-chat">
           <div id="mensajes"></div>
@@ -63,11 +64,8 @@ export function ChatGato(props) {
         communicateWithOpenAI(prompt)
           .then(response => {
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> ${response}`;
-            // mensajeGato.innerHTML = response;
-            // console.log("Respuesta de OpenAI:", response);
           })
           .catch(error => {
-            // parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau!`;
             console.error("Error al comunicarse con OpenAI:", error);
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau! 🐾`;
           });

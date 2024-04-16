@@ -31,7 +31,8 @@ const botonGuardarAPIKey = document.querySelector("#boton-guardar-apikey"); // b
 const inputAPIKey = document.querySelector("#input-apikey"); // campo de texto donde se ingresa el apikey
 
 botonAPIKey.addEventListener("click", function () {
-  popupAPIKey.style.display = "block";
+  popupAPIKey.style.display = "flex";
+  popupAPIKey.style.flexDirection = "column";
 });
 
 botonGuardarAPIKey.addEventListener("click", function () {
