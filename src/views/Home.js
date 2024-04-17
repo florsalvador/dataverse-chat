@@ -2,14 +2,13 @@ import data from '../data/dataset.js';
 import { filterData, filterDataObj, sortData, sortDataPrice, computeStats } from '../lib/dataFunctions.js';
 import { navigateTo } from '../router.js';
 
-/////////////////////////////////view.js////////////////////////////////////
 function renderItems(gatos) {
   const nuevoUl = document.createElement("ul");
   gatos.forEach(onlyCat => {
-    const nuevoLi = document.createElement("li"); // crear la etiqueta li para un gato
-    nuevoLi.classList.add("tarjeta"); // agrega la clase "tarjeta" al li
-    nuevoLi.setAttribute("itemscope", true);//<li itemscope></li> 
-    nuevoLi.setAttribute("itemtype", "RazasDeGatos");//<li itemtype="RazasDeGatos"></li>
+    const nuevoLi = document.createElement("li");
+    nuevoLi.classList.add("tarjeta");
+    nuevoLi.setAttribute("itemscope", true);
+    nuevoLi.setAttribute("itemtype", "RazasDeGatos");
     nuevoLi.innerHTML = `<img src="${onlyCat.imageUrl}" alt="${onlyCat.id}">
     <h2 itemprop=sort-order>${onlyCat.name}</h2>
     <p itemprop="shortDescription" class="descripcion">${onlyCat.shortDescription}</p>
@@ -22,14 +21,13 @@ function renderItems(gatos) {
       <button id="ver-info" class="boton-tarjeta">Más info</button>
       <button id="chat-gato" class="boton-tarjeta">Chatear</button>
     </div>`
-    nuevoUl.appendChild(nuevoLi); // inserta la etiqueta li en la etiqueta ul
+    nuevoUl.appendChild(nuevoLi);
   });
   return nuevoUl;
 }
 
-export function Home(/*props*/) {
+export function Home() {
   const divHome = document.createElement('div');
-  //////////////////////////////////////// index.html (DATAVERSE) ///////////////////////////
   divHome.innerHTML = `<header>
   <h1>Razas de gatos</h1>
   <h3>Las 24 razas de gatos más populares</h3>
@@ -86,14 +84,13 @@ export function Home(/*props*/) {
     <p>🐈‍⬛ 🐈‍⬛  Hecho por: Adriana y Flor 🐈‍⬛ 🐈‍⬛</p>
   </footer>`;
 
-  //////////////////////////////////////// main.js (DATAVERSE) ///////////////////////////
   const root = divHome.querySelector("#rootHome");
   root.appendChild(renderItems(data));
 
   // menu responsive
-  const menuNormal = divHome.querySelector(".menu-normal"); // div con selects en vista de PC
-  const menuBoton = divHome.querySelector(".menu-boton"); // boton menu abrir en vista phone
-  const cerrarFiltros = divHome.querySelector(".cerrar-filtros"); // boton menu cerrar en vista phone
+  const menuNormal = divHome.querySelector(".menu-normal");
+  const menuBoton = divHome.querySelector(".menu-boton");
+  const cerrarFiltros = divHome.querySelector(".cerrar-filtros");
   menuBoton.addEventListener("click", function () {
     menuBoton.style.display = "none";
     cerrarFiltros.style.display = "block";
@@ -151,7 +148,7 @@ export function Home(/*props*/) {
     return gatosOrdenados;
   }
 
-  //Funcionalidad de tarjeta ver mas----------------------------------------------------------
+  //Funcionalidad de boton ver mas----------------------------------------------------------
   function tarjetasVer(data) {
     const botonesVer = divHome.querySelectorAll("#ver-info");//selecciona todos los elementos li
     for (let i = 0; i < data.length; i++) {
@@ -159,7 +156,6 @@ export function Home(/*props*/) {
         navigateTo("/gatoInfo", {id: data[i].id});
       });
     }
-
     const botonesChat = divHome.querySelectorAll("#chat-gato");
     for (let i = 0; i < data.length; i++) {
       botonesChat[i].addEventListener("click", function () {
@@ -169,31 +165,22 @@ export function Home(/*props*/) {
   }
 
   tarjetasVer(data);
-  //---------------------------------------------------------------------------------------------
 
-  //Funcionalidad de tChat Grupal----------------------------------------------------------
-  
-  const botonChatGrupal = divHome.querySelector("#chat-grupal");//selecciona todos los elementos li
-
+  //Funcionalidad de Chat Grupal----------------------------------------------------------
+  const botonChatGrupal = divHome.querySelector("#chat-grupal");
   botonChatGrupal.addEventListener("click", function () {
-    //window.location.href = "/chatGrupal"
     navigateTo("/chatGrupal");
   });
-    
 
-  //---------------------------------------------------------------------------------------------
-
-  // EVENTOS SELECT
+  // EVENTOS SELECT-----------------------------------------------------------------------
   const selectPelaje = divHome.querySelector("#pelajeGato");
   const selectPersonalidad = divHome.querySelector("#personalidad");
   const selectOrden = divHome.querySelector("#orden");
 
-  const conteo = divHome.querySelector("#conteo"); //contador
+  const conteo = divHome.querySelector("#conteo");
 
   // evento para select pelaje
   selectPelaje.addEventListener("change", function (evento) {
-    // event: la informacion del evento, cuando haces un cambio viaja la informacion de que seleccionas o que has seleccionado previamente
-    //insertar las funciones
     const gatosFiltradosPelaje = filtrarPelaje(data, evento.target.value);
     const gatosFiltradosPelajePersonalidad = filtrarPersonalidad(gatosFiltradosPelaje, selectPersonalidad.value);
     const gatosFiltradosOrdenados = ordenar(gatosFiltradosPelajePersonalidad, selectOrden.value)
@@ -202,7 +189,6 @@ export function Home(/*props*/) {
     conteo.textContent = "Cantidad: " + gatosFiltradosOrdenados.length; // contador
     tarjetasVer(gatosFiltradosOrdenados);
   });
-
 
   // evento para select personalidad
   selectPersonalidad.addEventListener("change", function (evento) {
@@ -217,7 +203,6 @@ export function Home(/*props*/) {
 
   // evento para ordenar
   selectOrden.addEventListener("change", function (evento) {
-    // insertar las funciones
     const gatosFiltradosPelaje = filtrarPelaje(data, selectPelaje.value);
     const gatosFiltradosPelajePersonalidad = filtrarPersonalidad(gatosFiltradosPelaje, selectPersonalidad.value);
     const gatosFiltradosOrdenados = ordenar(gatosFiltradosPelajePersonalidad, evento.target.value);

@@ -1,24 +1,34 @@
 import data from '../data/dataset.js';
 import { communicateWithOpenAI } from '../lib/openAIApi.js';
+import { navigateTo } from '../router.js';
 
-export function ChatGrupal(/*props*/) {
+export function ChatGrupal() {
 
   const divChatGrupal = document.createElement("div");
   divChatGrupal.classList.add("div-Chat");
   divChatGrupal.innerHTML = `
-    <h1 class="titulo-chat">Chatea con todos los gatos</h1>
     <div class="contenedor-foto-chat">
-        <div id="imagenes-chat"></div>
-        <div class="contenedor-chat">
+      <div class="titulo-boton">
+        <button id="volver-home" class="boton-chat">◀︎</button>
+        <h1 class="titulo-chat">Chatea con todos los gatos</h1>
+        <div class="div-vacio-apikey"></div>  
+      </div>
+      <div id="imagenes-chat"></div>
+      <div class="contenedor-chat">
         <div id="mensajes"></div>
         <div class="contenedor-input">
             <textarea id="usuaria-input" placeholder="Escribe tu mensaje..." rows="3"></textarea>
             <button id="boton-enviar-input" class="boton-chat">▶</button>
         </div>
-        </div>
+      </div>
     </div>`
 
   const imagenesChat = divChatGrupal.querySelector("#imagenes-chat");
+
+  const volverHome = divChatGrupal.querySelector("#volver-home");
+  volverHome.addEventListener("click", function () {
+    navigateTo("/");
+  })
 
   data.forEach(gatito => {
     imagenesChat.innerHTML += `<img class="imagen-chat-grupal" src="${gatito.imageUrl}" alt="${gatito.id}"></img>`
@@ -27,6 +37,7 @@ export function ChatGrupal(/*props*/) {
   const mensajes = divChatGrupal.querySelector("#mensajes");
   const inputUsuaria = divChatGrupal.querySelector("#usuaria-input");
   const botonEnviarInput = divChatGrupal.querySelector("#boton-enviar-input");
+
   // primer mensaje del gato
   const primerParrafoGato = document.createElement("div");
   primerParrafoGato.classList.add("mensaje-gato");
@@ -61,7 +72,7 @@ export function ChatGrupal(/*props*/) {
             };
           })
           .catch(error => {
-            console.error("Error al comunicarse con OpenAI:", error);
+            console.error("Error al comunicarse con OpenAI:", error); // consola necesaria para mostrar el error
             return {
               idParrafo: `Gatito ${gatito.id} 🐈`,
               respuestaParrafo: "No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau! 🐾"
@@ -79,7 +90,6 @@ export function ChatGrupal(/*props*/) {
           });
         });
 
-      // console.log(promesas);
     }
 
     inputUsuaria.value = "";

@@ -10,29 +10,29 @@ export const filterDataObj = (data, filterBy, value) => {
 
 // orden A-Z y de Z-A
 export const sortData = (data, sortBy, sortOrder) => {
-  const data1 = [...data];//creando copia (shallow copy)// operador spread(...): crea una copia de cada elemento del array
+  const dataSorted = [...data];
   
-  data1.sort((a, b) =>{
+  dataSorted.sort((a, b) =>{
     if(sortOrder === "asc"){
-      return (a[sortBy] > b[sortBy]) ? 1 : -1; //codigo ternario si es true devuelve 1 si es false devuelve -1
+      return (a[sortBy] > b[sortBy]) ? 1 : -1;
     }else if(sortOrder === "desc"){
-      return (a[sortBy] < b[sortBy]) ? 1 : -1;
+      return (a[sortBy] > b[sortBy]) ? -1 : 1;
     }//else return 0;
   });
-  return data1;
+  return dataSorted;
 };
 
 //Ordena por precios
 export const sortDataPrice = (data, sortBy, sortOrder) => {
-  const data1 = data.map(x => x);//crea una copia, devuelve x para cada elemento x, creando una copia de cada elemento 
-  data1.sort((a, b) =>{
+  const dataSorted = data.map(x => x);
+  dataSorted.sort((a, b) =>{
     if(sortOrder === "asc"){
-      return (a["facts"][sortBy] > b["facts"][sortBy]) ? 1 : -1; //codigo ternario si es true devuelve 1 si es false devuelve -1
+      return (a["facts"][sortBy] > b["facts"][sortBy]) ? 1 : -1;
     }else if(sortOrder === "desc"){
-      return (a["facts"][sortBy] < b["facts"][sortBy]) ? 1 : -1;
+      return (a["facts"][sortBy] > b["facts"][sortBy]) ? -1 : 1;
     }//else return 0;
   });
-  return data1;
+  return dataSorted;
 };
 
 //Funcion del boton estadísticas

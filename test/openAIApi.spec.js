@@ -3,7 +3,6 @@ import { communicateWithOpenAI } from '../src/lib/openAIApi.js';
 
 describe('communicateWithOpenAI', () => {
   it('Debería comunicarse con el api de OpenAI', async () => {
-    //La respuesta que debería dar OpenAI
     const response = {
       data: {
         choices: [
@@ -12,7 +11,6 @@ describe('communicateWithOpenAI', () => {
       }
     }
 
-    //Creando mock de axios
     global.axios = {
       post: jest.fn(() => Promise.resolve(response))
     }
@@ -30,10 +28,3 @@ describe('communicateWithOpenAI', () => {
 
   })
 })
-
-//     ///////////////////////////////////////////laboratoria
-//     return communicateWithOpenAI().then(data => {
-//       expect(data).toBe('example');
-//     });
-//     //////////////////////////////////
-//   });
