@@ -66,7 +66,7 @@ export function ChatGato(props) {
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> ${response}`;
           })
           .catch(error => {
-            console.error("Error al comunicarse con OpenAI:", error);
+            console.error("Error al comunicarse con OpenAI:", error);//Necesario para ver el error de conexión API OpenAI
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau! 🐾`;
           });
 

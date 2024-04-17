@@ -37,7 +37,7 @@ export function GatoInfo(props) {
       volverHome.addEventListener("click", function () {
         navigateTo("/");
       })
-      /////////////////////////////////////
+
       const personalidad = divGatoInfo.querySelector(".personalidad");
       let personalidadContenido = "";
       const pers = ["tranquilo", "carinoso", "sociable", "energico", "jugueton"];
@@ -47,9 +47,7 @@ export function GatoInfo(props) {
         }
       }
       personalidad.textContent = personalidadContenido;
-      //////////////////////////////////////////
 
-      //////////////////////////////////////
       const enfermedadesComunes = divGatoInfo.querySelector(".enfermedadesComunes");
       let Contenido = "";
       const enfermedades = ["problemasRespiratorios", "problemasDentales", "problemasCardiacos", "problemasDePiel", "problemasRenales", "problemasOculares", "tendenciaObesidad"];
@@ -59,13 +57,9 @@ export function GatoInfo(props) {
         }
       }
       enfermedadesComunes.textContent = Contenido;
-      ///////////////////////////////////////////////
 
     }
 
   }
   return divGatoInfo;
-  // console.log(props);
-  // const gatito = props;
-
 }

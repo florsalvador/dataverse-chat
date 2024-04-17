@@ -30,10 +30,3 @@ describe('communicateWithOpenAI', () => {
 
   })
 })
-
-//     ///////////////////////////////////////////laboratoria
-//     return communicateWithOpenAI().then(data => {
-//       expect(data).toBe('example');
-//     });
-//     //////////////////////////////////
-//   });

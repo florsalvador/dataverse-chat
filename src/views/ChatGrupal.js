@@ -2,7 +2,7 @@ import data from '../data/dataset.js';
 import { communicateWithOpenAI } from '../lib/openAIApi.js';
 import { navigateTo } from '../router.js';
 
-export function ChatGrupal(/*props*/) {
+export function ChatGrupal() {
 
   const divChatGrupal = document.createElement("div");
   divChatGrupal.classList.add("div-Chat");
@@ -89,7 +89,6 @@ export function ChatGrupal(/*props*/) {
           });
         });
 
-      // console.log(promesas);
     }
 
     inputUsuaria.value = "";

@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
   onURLChange(window.location)
 });
 
+//Guardar historial
 window.addEventListener("popstate", () => {
   onURLChange(window.location);
 });
@@ -40,3 +41,8 @@ botonGuardarAPIKey.addEventListener("click", function () {
   getApiKey();
   popupAPIKey.style.display = "none";
 });
+
+const cerrarPopup = document.querySelector("#cerrar-popup-apikey") // boton cerrar div popup
+cerrarPopup.addEventListener("click", function() {
+  popupAPIKey.style.display = "none";
+})
