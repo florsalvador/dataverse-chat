@@ -37,6 +37,7 @@ export function ChatGrupal() {
   const mensajes = divChatGrupal.querySelector("#mensajes");
   const inputUsuaria = divChatGrupal.querySelector("#usuaria-input");
   const botonEnviarInput = divChatGrupal.querySelector("#boton-enviar-input");
+
   // primer mensaje del gato
   const primerParrafoGato = document.createElement("div");
   primerParrafoGato.classList.add("mensaje-gato");
@@ -71,7 +72,7 @@ export function ChatGrupal() {
             };
           })
           .catch(error => {
-            console.error("Error al comunicarse con OpenAI:", error);
+            console.error("Error al comunicarse con OpenAI:", error); // consola necesaria para mostrar el error
             return {
               idParrafo: `Gatito ${gatito.id} 🐈`,
               respuestaParrafo: "No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau! 🐾"

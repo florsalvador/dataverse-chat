@@ -35,6 +35,7 @@ export function ChatGato(props) {
       const mensajes = divChatGato.querySelector("#mensajes");
       const inputUsuaria = divChatGato.querySelector("#usuaria-input");
       const botonEnviarInput = divChatGato.querySelector("#boton-enviar-input");
+
       // primer mensaje del gato
       const primerParrafoGato = document.createElement("div");
       primerParrafoGato.classList.add("mensaje-gato");
@@ -66,7 +67,7 @@ export function ChatGato(props) {
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> ${response}`;
           })
           .catch(error => {
-            console.error("Error al comunicarse con OpenAI:", error);//Necesario para ver el error de conexión API OpenAI
+            console.error("Error al comunicarse con OpenAI:", error); // consola necesaria para mostrar el error
             parrafoGato.innerHTML = `<p class="negrita-mensajes">Gatito ${gatito.id} 🐈</p> No puedo hablar ahora mismo, por favor intenta más tarde. ¡Miau! 🐾`;
           });
 

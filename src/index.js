@@ -4,7 +4,7 @@ import { GatoInfo } from './views/GatoInfo.js';
 import { ChatGrupal } from './views/ChatGrupal.js';
 import { ErrorGatuno } from './views/ErrorGatuno.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
-import {getApiKey, setApiKey} from './lib/apiKey.js'
+import { getApiKey, setApiKey } from './lib/apiKey.js'
 
 const routes = { 
   '/': Home,
@@ -17,19 +17,18 @@ const routes = {
 setRoutes(routes);
 
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(document.querySelector("#root")); // rootEl = el
+  setRootEl(document.querySelector("#root"));
   onURLChange(window.location)
 });
 
-//Guardar historial
 window.addEventListener("popstate", () => {
   onURLChange(window.location);
 });
 
-const botonAPIKey = document.querySelector("#boton-apikey"); // boton que abre el form
-const popupAPIKey = document.querySelector("#popup-apikey"); // div escondido que contiene el form
-const botonGuardarAPIKey = document.querySelector("#boton-guardar-apikey"); // boton que guarda el apikey
-const inputAPIKey = document.querySelector("#input-apikey"); // campo de texto donde se ingresa el apikey
+const botonAPIKey = document.querySelector("#boton-apikey");
+const popupAPIKey = document.querySelector("#popup-apikey");
+const botonGuardarAPIKey = document.querySelector("#boton-guardar-apikey");
+const inputAPIKey = document.querySelector("#input-apikey");
 
 botonAPIKey.addEventListener("click", function () {
   popupAPIKey.style.display = "flex";
@@ -42,7 +41,7 @@ botonGuardarAPIKey.addEventListener("click", function () {
   popupAPIKey.style.display = "none";
 });
 
-const cerrarPopup = document.querySelector("#cerrar-popup-apikey") // boton cerrar div popup
+const cerrarPopup = document.querySelector("#cerrar-popup-apikey");
 cerrarPopup.addEventListener("click", function() {
   popupAPIKey.style.display = "none";
 })
